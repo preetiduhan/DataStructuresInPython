@@ -1,10 +1,13 @@
-def perm(string,current,index,n):
-    if index == n:
-        print(current)
-        return;
+# Print subsequences of string recursively
+
+def subs(string,current,index,n):
+    if(index==n):
+        output.append(current)
+        return
     else:
-        perm(string,current+string[index],index+1,n)
-        perm(string,current,index+1,n)
-        
-if __name__ == "__main__": 
-    perm('abcd','',0,4)
+        subs(string,current+string[index],index+1,n)
+        subs(string,current,index+1,n)
+
+output = []
+subs('abcd','',0,4)
+print(output)
